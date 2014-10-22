@@ -16,6 +16,8 @@ sudo ./xampp.run --mode unattended
 
 #Ownership fix for htdocs
 sudo chown -R vagrant:vagrant /opt/lampp/htdocs/
+
+#Security config fix for XAMPP
 sudo wget "https://gist.githubusercontent.com/herrniemand/364490075d2f54eb8bfe/raw/e3f90120c5f973d7021efa61c6110a29590be9a9/httpd-xampp.conf" -O /opt/lampp/etc/extra/httpd-xampp.conf
 
 #Add startup script
