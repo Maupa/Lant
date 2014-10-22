@@ -2,6 +2,8 @@
 
 #remove juju
 sudo apt-get -y remove juju*
+#remove juju message
+sudo rm /etc/update-motd.d/98-cloudguest
 
 #updating and instaling depencies
 sudo apt-get -y update
