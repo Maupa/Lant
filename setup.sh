@@ -25,4 +25,5 @@ EOT
 sudo chmod +x /etc/init.d/vagrant_startup
 sudo update-rc.d vagrant_startup defaults
 
+#server start
 sudo /opt/lampp/lampp start
