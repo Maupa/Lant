@@ -1,13 +1,11 @@
 #!/usr/bin/env bash
 
-#remove juju
-sudo apt-get -y remove juju*
-sudo cat /dev/null > /etc/update-motd.d/98-cloudguest
-
 #Updating and instaling depencies
 sudo apt-get -y update
 sudo apt-get -y upgrade
 sudo apt-get -y install git vim
+
+sudo cat /dev/null > /etc/update-motd.d/98-cloudguest
 
 #Installing XAMPP
 wget "http://downloads.sourceforge.net/project/xampp/XAMPP%20Linux/1.8.3/xampp-linux-x64-1.8.3-5-installer.run" -O xampp.run
