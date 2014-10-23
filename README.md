@@ -1,6 +1,6 @@
 Lant
 ====
-Lant is a LAMP stack development box.
+Lant is a LAMP stack vagrant development box.
 
 ### Includes
 
