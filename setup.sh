@@ -29,7 +29,13 @@ sudo cat <<EOT > /etc/apache2/mods-enabled/dir.conf
         DirectoryIndex index.php index.html index.cgi index.pl index.php index.xhtml index.htm
 </IfModule>
 EOT
+sudo a2enmod rewrite
 
+#Ownership fix for html
+sudo chown -R vagrant:vagrant /var/www/html
+
+#Creates index.php if it is not exists
+if [ ! -f /var/www/html/index.php ] ; then echo "<?php phpinfo(); ?>" > /var/www/html/index.php; fi
 
 #UGLY Apache fixed config
 sudo mv /etc/apache2/apache2.conf /etc/apache2/apache2.conf_old
@@ -75,12 +81,6 @@ LogFormat "%{User-agent}i" agent
 IncludeOptional conf-enabled/*.conf
 IncludeOptional sites-enabled/*.conf
 ACF
-
-#Ownership fix for html
-sudo chown -R vagrant:vagrant /var/www/html
-
-#Creates index.php if it is not exists
-if [ ! -f /var/www/html/index.php ] ; then echo "<?php phpinfo(); ?>" > /var/www/html/index.php; fi
 
 #Apache restart
 sudo /etc/init.d/apache2 restart
